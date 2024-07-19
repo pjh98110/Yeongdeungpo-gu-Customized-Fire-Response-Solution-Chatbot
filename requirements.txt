@@ -7,4 +7,5 @@ streamlit_extras
 streamlit_chat
 openai
 google
+google-cloud-aiplatform
 requests
