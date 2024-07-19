@@ -193,7 +193,7 @@ if selected_chatbot == "GPT를 통한 영등포구 맞춤형 화재 대응 솔�
         # 모델 호출 및 응답 처리
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": enhanced_prompt}
                 ] + st.session_state.gpt_messages,
