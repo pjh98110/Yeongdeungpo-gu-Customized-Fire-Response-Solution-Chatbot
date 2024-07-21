@@ -5,7 +5,7 @@ datetime
 st_pages
 streamlit_extras
 streamlit_chat
-openai
+openai==0.27.0
 google
 google.generativeai
 requests
