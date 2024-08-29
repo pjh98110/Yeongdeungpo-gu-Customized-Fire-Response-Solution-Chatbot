@@ -22,13 +22,13 @@ if "gpt_api_key" not in st.session_state:
 if "gemini_api_key" not in st.session_state:
     st.session_state.gemini_api_key = st.secrets["secrets"]["GEMINI_API_KEY"]
 
-# 세션 변수 체크
-def check_session_vars():
-    required_vars = ['selected_district', 'report_type']
-    for var in required_vars:
-        if var not in st.session_state:
-            st.warning("필요한 정보가 없습니다. 처음으로 돌아가서 정보를 입력해 주세요.")
-            st.stop()
+# # 세션 변수 체크
+# def check_session_vars():
+#     required_vars = ['selected_district', 'report_type']
+#     for var in required_vars:
+#         if var not in st.session_state:
+#             st.warning("필요한 정보가 없습니다. 처음으로 돌아가서 정보를 입력해 주세요.")
+#             st.stop()
 
 
 # 사이드바에서 행정동 선택
