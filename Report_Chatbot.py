@@ -45,6 +45,12 @@ report_type = st.sidebar.selectbox(
 )
 st.session_state.report_type = report_type
 
+selected_chatbot = st.sidebar.selectbox(
+    "(3) 원하는 챗봇(GPT, Gemini)을 선택하세요.",
+    options=["GPT를 통한 영등포구 맞춤형 화재 대응 솔루션 챗봇", "Gemini를 통한 영등포구 맞춤형 화재 대응 솔루션 챗봇"],
+    help="선택한 LLM 모델에 따라 다른 챗봇을 제공합니다."
+)
+
 # 기상청 단기예보 API 불러오기
 API_KEY = st.secrets["secrets"]["WEATHER_KEY"] # 공공데이터 포털 API KEY
 
@@ -127,7 +133,7 @@ three_days_ago = today - timedelta(days=1)
 
 # 사이드바에서 날짜 선택
 selected_day = st.sidebar.date_input(
-    "(5) 오늘의 날짜를 선택하세요:", 
+    "(4) 오늘의 날짜를 선택하세요:", 
     today, 
     min_value=three_days_ago, 
     max_value=today
@@ -369,12 +375,6 @@ if "gemini_messages" not in st.session_state:
         {"role": "model", "parts": [{"text": "Gemini가 사용자에게 영등포구 맞춤형 화재 대응 보고서를 출력해드립니다."}]}
     ]
 
-
-selected_chatbot = st.sidebar.selectbox(
-    "원하는 챗봇을 선택하세요.",
-    options=["GPT를 통한 영등포구 맞춤형 화재 대응 솔루션 챗봇", "Gemini를 통한 영등포구 맞춤형 화재 대응 솔루션 챗봇"],
-    help="선택한 LLM 모델에 따라 다른 챗봇을 제공합니다."
-)
 
 if selected_chatbot == "GPT를 통한 영등포구 맞춤형 화재 대응 솔루션 챗봇":
     colored_header(
