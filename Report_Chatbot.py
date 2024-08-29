@@ -451,7 +451,7 @@ elif selected_chatbot == "Gemini를 통한 영등포구 맞춤형 화재 대응 
         st.header("모델 설정")
         model_name = st.selectbox(
             "모델 선택",
-            ["gemini-1.5-pro", 'gemini-1.5-flash']
+            ['gemini-1.5-flash', "gemini-1.5-pro"]
         )
         temperature = st.slider("Temperature", min_value=0.0, max_value=1.0, value=0.2, help="생성 결과의 다양성을 조절합니다.")
         max_output_tokens = st.number_input("Max Tokens", min_value=1, value=2048, help="생성되는 텍스트의 최대 길이를 제한합니다.")
