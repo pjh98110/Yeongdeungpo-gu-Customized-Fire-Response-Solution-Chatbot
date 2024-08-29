@@ -413,7 +413,7 @@ if selected_chatbot == "GPT를 통한 영등포구 맞춤형 화재 대응 솔�
             st.write(prompt)
 
         # 프롬프트 엔지니어링 적용
-        enhanced_prompt = gpt_prompt(prompt, st.session_state.selected_district)
+        enhanced_prompt = gpt_prompt(prompt)
 
         # 모델 호출 및 응답 처리
         try:
@@ -481,7 +481,7 @@ elif selected_chatbot == "Gemini를 통한 영등포구 맞춤형 화재 대응 
             st.write(prompt)
 
         # 프롬프트 엔지니어링 적용
-        enhanced_prompt = gemini_prompt(prompt, st.session_state.selected_district)
+        enhanced_prompt = gemini_prompt(prompt)
 
         # 모델 호출 및 응답 처리
         try:
