@@ -22,7 +22,6 @@ if "gpt_api_key" not in st.session_state:
 if "gemini_api_key" not in st.session_state:
     st.session_state.gemini_api_key = st.secrets["secrets"]["GEMINI_API_KEY"]
 
-
 # 세션 변수 체크
 def check_session_vars():
     required_vars = ['selected_district', 'report_type']
@@ -136,7 +135,7 @@ selected_day = st.sidebar.date_input(
 st.session_state.selected_day = selected_day
 
 # 날짜와 시도의 기상 정보 가져오기
-weather_data = weather_info(st.session_state.selected_day, st.session_state.selected_district)
+weather_data = weather_info(st.session_state.selected_day, "서울특별시")
 
 
 # 특정 시간의 날씨 데이터를 필터링하는 함수
